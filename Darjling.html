@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Darjling-Hotels</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h1>Darjling Hotels</h1>
+    <div class="hotel-list">
+        <div class="hotel">
+            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/21/2f/47/67/cedar-inn.jpg?w=1400&h=800&s=1"
+                alt="Cedar Inn">
+            <h2>Cedar Inn</h2>
+            <p>Location:Dr. Zakir Hussain Road Below St. Pauls School, Darjeeling</p>
+
+            <button class="book-now">
+                <a href="cedar.html">Book Now</a>
+            </button>
+
+        </div>
+        <div class="hotel">
+            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/18/53/77/a8/mayfair-darjeeling.jpg?w=1400&h=800&s=1"
+                alt="Mayfair Hill Resort Darjeeling">
+            <h2>Mayfair Hill Resort Darjeeling</h2>
+            <p>Location:The Mall Opposite Governor House, Darjeeling,</p>
+            <button class="book-now">
+                <a href="mayfair.html">Book Now</a>
+            </button>
+        </div>
+        <div class="hotel">
+            <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/526577199.jpg?k=041f408de3df1dda621bcae1cd10fcbccf5be1fcc125fbdb33b8535c10803154&o="
+                alt="Hotel Viceroy">
+            <h2>Hotel Viceroy</h2>
+            <p>Location: 17, Gandhi Road, 734101 Darjeeling</p>
+            <button class="book-now">
+                <a href="viceroy.html">Book Now</a>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        function bookHotel(hotelName) {
+            window.location.href = `booking.html?hotel=${hotelName}`;
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        .hotel-list {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .hotel {
+            border: 1px solid #ccc;
+            padding: 10px;
+            width: 300px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .hotel img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .book-now {
+            background-color: #28a745;
+            color: white;
+            font-size: 16px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .book-now:hover {
+            background-color: #218838;
+        }
+    </style>
+</body>
+
+</html>

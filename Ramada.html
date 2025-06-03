@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> ramada by wyndham mussoorie - Details</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .image-gallery {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .image-gallery img {
+            width: 250px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .image-gallery img:hover {
+            transform: scale(1.1);
+        }
+
+        .book-now {
+            background-color: #28a745;
+            color: white;
+            font-size: 18px;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 15px 0;
+            transition: background 0.3s ease;
+        }
+
+        .book-now:hover {
+            background-color: #218838;
+        }
+
+        .ratings-box {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            width: 60%;
+            margin: auto;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .review-box-style {
+            background: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .review-box-style:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .review-box {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            width: 50%;
+            margin: auto;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .review-box:hover {
+            transform: scale(1.02);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        textarea,
+        input {
+            width: 90%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        select {
+            width: 50%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .submit-btn {
+            background: linear-gradient(45deg, #ff416c, #ff4b2b);
+            color: white;
+            font-size: 16px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background: linear-gradient(45deg, #ff4b2b, #ff416c);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Ramada by wyndham mussoorie</h1>
+
+    <div class="image-gallery">
+        <img src="https://pix10.agoda.net/hotelImages/13594412/0/69a561261731c1c80540edccc08f7705.jpg?ca=19&ce=1&s=414x232"
+            alt="Hotel Image 1">
+        <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/198180654.jpg?k=ffad39e05494d1ed24b98794cb06b6c87ca3c11a425a4fccea2298854a8c5f0f&o=&hp=1"
+            alt="Hotel Image 2">
+        <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/328431915.jpg?k=62c2139c9e5209778d308f048693db314a9011b9f304bcdfddab547682c74d0a&o=&hp=1"
+            alt="Hotel Image 3">
+        <img src="https://q-xx.bstatic.com/xdata/images/hotel/max500/328432412.jpg?k=57cedafb03a9f4bb716961f601a6f142c655a5619e69da1e4cd982f8542bf11c&o="
+            alt="Hotel Image 4">
+    </div>
+
+    <p><b>Location:- </b>Mall Rd, opposite Picture Palace, Kulri, Mussoorie</p>
+    <p>At Ramada By Wyndham Mussoorie Mall Road, our welcoming atmosphere and convenient amenities, such as free WiFi,
+        offer an
+        ideal stay in Mussoorie</p>
+    <p>&#8377; 8500</p>
+
+    <button class="book-now" onclick="bookHotel('Ram')">Book Now</button>
+    <script>
+        function bookHotel(hotelName) {
+            // Redirect to taj.html with the hotel name as a query parameter
+            window.location.href = `Ram.html?hotel=${hotelName}`;
+        }
+    </script>
+
+    <h2>User Ratings & Reviews</h2>
+    <div class="ratings-box" id="reviews">
+        <div class="review-box-style">
+            <strong>priti chaudhari</strong> - ⭐⭐⭐⭐⭐
+            <p>Amazing Hotel With Amazing View.</p>
+        </div>
+        <div class="review-box-style">
+            <strong>Gudiya Paswan</strong> - ⭐⭐⭐⭐
+            <p>Guests can dine at the hotel's restaurant, which serves a variety of cuisines, including North Indian and
+                local Garhwali
+                dishes. Some of the specialties include Dal Makhani, Paneer Butter Masala, Butter Chicken, and Garhwali
+                Thali. The
+                restaurant operates during standard meal times for breakfast, lunch, and dinner..</p>
+        </div>
+    </div>
+
+    <h3>Add Your Review</h3>
+    <div class="review-box">
+        <input type="text" id="username" placeholder="Enter your name">
+        <textarea id="review-text" placeholder="Write your review..."></textarea>
+        <select id="rating">
+            <option value="⭐">⭐</option>
+            <option value="⭐⭐">⭐⭐</option>
+            <option value="⭐⭐⭐">⭐⭐⭐</option>
+            <option value="⭐⭐⭐⭐">⭐⭐⭐⭐</option>
+            <option value="⭐⭐⭐⭐⭐">⭐⭐⭐⭐⭐</option>
+        </select>
+        <button class="submit-btn" onclick="addReview()">Submit Review</button>
+    </div>
+
+    <script>
+        function addReview() {
+            let username = document.getElementById('username').value.trim();
+            let reviewText = document.getElementById('review-text').value.trim();
+            let rating = document.getElementById('rating').value;
+            let reviewsContainer = document.getElementById('reviews');
+
+            if (username && reviewText) {
+                let reviewDiv = document.createElement('div');
+                reviewDiv.classList.add("review-box-style");
+                reviewDiv.innerHTML = `<strong>${username}</strong> - ${rating} <p>${reviewText}</p>`;
+                reviewsContainer.appendChild(reviewDiv);
+            }
+        }
+    </script>
+
+    <!-- Map Section -->
+    <div class="map">
+        <h3>Location on map</h3>
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3439.38054301252!2d78.07854007536154!3d30.45365777472016!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3908d11170379079%3A0x9317e68ec5a8f7af!2sRamada%20By%20Wyndham%20Mussoorie%20Mall%20Road!5e0!3m2!1sen!2sin!4v1743372980029!5m2!1sen!2sin"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        .image-gallery {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .image-gallery img {
+            width: 200px;
+            border-radius: 10px;
+        }
+
+        .book-now {
+            background-color: #28a745;
+            color: white;
+            font-size: 18px;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 15px 0;
+        }
+
+        .review-box {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            width: 50%;
+            margin: auto;
+            text-align: center;
+        }
+
+        textarea,
+        input {
+            width: 90%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        select {
+            width: 50%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .submit-btn {
+            background: linear-gradient(45deg, #ff416c, #ff4b2b);
+            color: white;
+            font-size: 16px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+
+</body>
+
+</html>

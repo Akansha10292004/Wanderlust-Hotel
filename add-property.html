@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Property - Wanderlust</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #f8e8e8, #e8f0ff);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .form-container {
+            background: #fff;
+            padding: 35px 30px;
+            border-radius: 14px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .form-container h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .form-container input,
+        .form-container textarea {
+            width: 100%;
+            padding: 12px 15px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 15px;
+            transition: 0.3s ease;
+        }
+
+        .form-container input:focus,
+        .form-container textarea:focus {
+            border-color: #6cb4ff;
+            box-shadow: 0 0 6px rgba(108, 180, 255, 0.4);
+            outline: none;
+        }
+
+        .form-container textarea {
+            resize: none;
+            height: 100px;
+        }
+
+        .form-container button {
+            width: 100%;
+            padding: 14px;
+            background-color: #6cb4ff;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 15px;
+        }
+
+        .form-container button:hover {
+            background-color: #569be8;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="form-container">
+        <h2>Add Your Property</h2>
+        <input type="text" id="propName" placeholder="Property Name" required>
+        <input type="text" id="contact" placeholder="Contact Number" required>
+        <input type="text" id="location" placeholder="Location" required>
+        <input type="text" id="country" placeholder="Country" required>
+        <input type="text" id="price" placeholder="Price per Night" required>
+        <input type="text" id="image" placeholder="Image URL" required>
+        <textarea id="desc" placeholder="Description" required></textarea>
+        <button onclick="addProperty()">Add Property</button>
+    </div>
+
+    <script>
+        function addProperty() {
+            const user = JSON.parse(localStorage.getItem('user'));
+            const property = {
+                id: Date.now(),
+                owner: user.name,
+                email: user.email,
+                password: user.password,
+                name: document.getElementById('propName').value.trim(),
+                contact: document.getElementById('contact').value.trim(),
+                location: document.getElementById('location').value.trim(),
+                country: document.getElementById('country').value.trim(),
+                price: document.getElementById('price').value.trim(),
+                image: document.getElementById('image').value.trim(),
+                desc: document.getElementById('desc').value.trim(),
+            };
+
+            if (
+                !property.name || !property.contact || !property.location || !property.country ||
+                !property.price || !property.image || !property.desc
+            ) {
+                alert('Please fill in all fields.');
+                return;
+            }
+
+            const properties = JSON.parse(localStorage.getItem('properties')) || [];
+            properties.push(property);
+            localStorage.setItem('properties', JSON.stringify(properties));
+
+            alert('Property added successfully!');
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+
+</html>

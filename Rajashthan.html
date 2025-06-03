@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rajashthan Hotel Booking</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h1>Rajashthan Hotel Booking</h1>
+    <div class="hotel-list">
+        <div class="hotel">
+            <img src="https://lh3.googleusercontent.com/p/AF1QipNpNtdT9ExOdxneGZkmBNJ1R6sv5l-N23tJslU-=w574-h384-n-k-rw-no-v1"
+                alt="Taj-mahal-hotel-palace">
+            <h2>Hotel Rajasthan Palace</h2>
+            <p>Location: Peelwa Garden, Rajasthan Palace Hotel, Moti Doongari Road, Jaipur, Rajasthan</p>
+
+            <button class="book-now">
+                <a href="Hotel Rajashthan palace.html">Book Now</a>
+            </button>
+
+        </div>
+        <div class="hotel">
+            <img src="https://lh4.googleusercontent.com/proxy/tn3SyfgMUjqOPunlnHYDHDx2vqQFbwUL7ZBbb1PTXcLd1wlk4X8xql0VURg_CTPiGVNQe1NRudZ8Ctm9rWlj2N_1K_3TeIHR4C-Jok1es5EuwNN9MZg51zrjswQPX2HImy9BE57lMX8U1Nd4jj4woSboc8JioQ=w253-h168-k-no"
+                alt="meridien">
+            <h2>The Fern Habitat</h2>
+            <p>Location:Shyam Nagar, Ajmer Road, Sodala Jaipur 302 019, Sodala, Jaipur, Rajasthan </p>
+            <button class="book-now">
+                <a href="The Fern Habitat.html">Book Now</a>
+            </button>
+        </div>
+
+    </div>
+    </div>
+
+    <script>
+        function bookHotel(hotelName) {
+            window.location.href = `booking.html?hotel=${hotelName}`;
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        .hotel-list {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .hotel {
+            border: 1px solid #ccc;
+            padding: 10px;
+            width: 300px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .hotel img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .book-now {
+            background-color: #28a745;
+            color: white;
+            font-size: 16px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .book-now:hover {
+            background-color: #218838;
+        }
+    </style>
+</body>
+
+</html>

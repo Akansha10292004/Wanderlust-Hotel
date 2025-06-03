@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Goa Hotel Booking</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h1> Goa Hotel Booking</h1>
+    <div class="hotel-list">
+        <div class="hotel">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2sqsV9HQXt_G7xZUIqk4btJQkSWtWU48n3Q&s"
+                alt="La Estoria, Goa - IHCL SeleQtions">
+            <h2>La Estoria, Goa - IHCL SeleQtions</h2>
+            <p>Location: Bammon Vaddo, Candolim, Goa</p>
+
+            <button class="book-now">
+                <a href="La Estoria.html">Book Now</a>
+            </button>
+
+        </div>
+        <div class="hotel">
+            <img src="https://r1imghtlak.mmtcdn.com/c28c42daddb711ed94350a58a9feac02.jpeg" alt="ArtBuzz Hotel">
+            <h2>Hotel Pajaros Blu</h2>
+            <p>Location: HQ26+JGV, Khobra Waddo, Calangute, Goa</p>
+            <button class="book-now">
+                <a href="Pajaros.html">Book Now</a>
+            </button>
+        </div>
+        <div class="hotel">
+            <img src="https://cache.marriott.com/is/image/marriotts7prod/mc-goivm-hotel-facade-21921:Classic-Hor?output-quality=70&interpolation=progressive-bilinear&downsize=1200px:*"
+                alt="Ramada by Wyndham Mussorie">
+            <h2>JW Marriott Goa</h2>
+            <p>Location: Vagator Beach Rd, Bardez, Coutinho Vaddo, Vagator, Anjuna, Goa</p>
+            <button class="book-now">
+                <a href="jw.html">Book Now</a>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        function bookHotel(hotelName) {
+            window.location.href = `booking.html?hotel=${hotelName}`;
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        .hotel-list {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .hotel {
+            border: 1px solid #ccc;
+            padding: 10px;
+            width: 300px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .hotel img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .book-now {
+            background-color: #28a745;
+            color: white;
+            font-size: 16px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .book-now:hover {
+            background-color: #218838;
+        }
+    </style>
+</body>
+
+</html>

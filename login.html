@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Wanderlust</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #83a4d4, #b6fbff);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .form-container {
+            background: #fff;
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .form-container h2 {
+            margin-bottom: 25px;
+            color: #333;
+        }
+
+        .form-container input {
+            width: 100%;
+            padding: 12px 15px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-size: 16px;
+        }
+
+        .form-container input:focus {
+            border-color: #6cb4ff;
+            outline: none;
+            box-shadow: 0 0 5px rgba(108, 180, 255, 0.5);
+        }
+
+        .form-container button {
+            width: 100%;
+            padding: 12px;
+            background: #6cb4ff;
+            color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease;
+            margin-top: 15px;
+        }
+
+        .form-container button:hover {
+            background: #559eea;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="form-container">
+        <h2>Login / Signup</h2>
+        <input type="text" id="name" placeholder="Name" required />
+        <input type="email" id="email" placeholder="Email" required />
+        <input type="password" id="password" placeholder="Password" required />
+        <button onclick="login()">Login / Signup</button>
+    </div>
+
+    <script>
+        function login() {
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value.trim();
+
+            if (!name || !email || !password) {
+                alert("Please fill in all fields.");
+                return;
+            }
+
+            localStorage.setItem('user', JSON.stringify({ name, email, password }));
+            alert('Login successful!');
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+
+</html>

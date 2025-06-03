@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Inn Riviera Jammu - Details</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .image-gallery {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .image-gallery img {
+            width: 250px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .image-gallery img:hover {
+            transform: scale(1.1);
+        }
+
+        .book-now {
+            background-color: #28a745;
+            color: white;
+            font-size: 18px;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 15px 0;
+            transition: background 0.3s ease;
+        }
+
+        .book-now:hover {
+            background-color: #218838;
+        }
+
+        .ratings-box {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            width: 60%;
+            margin: auto;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .review-box-style {
+            background: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .review-box-style:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .review-box {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            width: 50%;
+            margin: auto;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .review-box:hover {
+            transform: scale(1.02);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        textarea,
+        input {
+            width: 90%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        select {
+            width: 50%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .submit-btn {
+            background: linear-gradient(45deg, #ff416c, #ff4b2b);
+            color: white;
+            font-size: 16px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background: linear-gradient(45deg, #ff4b2b, #ff416c);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Inn Riviera Jammu</h1>
+
+    <div class="image-gallery">
+        <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/281640756.jpg?k=68740e3df938285ddd5ce6c1f2e30da491141aaa981ebad4be240be0d47c7a31&o=&hp=1"
+            alt="Hotel Image 1">
+        <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/595963780.jpg?k=abbdd8f7d905a3b39ba39c3c6dc29b7632bbc53c74092107df0015129ec400d6&o=&hp=1"
+            alt="Hotel Image 2">
+        <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/265380615.jpg?k=825b9e095f48293e2b4a1a1e4b578bc7dff0fa8b8ac30770ef73648d2958cedb&o=&hp=1"
+            alt="Hotel Image 3">
+        <img src="https://cf.bstatic.com/xdata/images/hotel/max1280x900/595963763.jpg?k=8b0e6ce03d87bc01346a65dc25bbdb81930f4a6e1a66431ca639668686e54040&o=&hp=1"
+            alt="Hotel Image 4">
+    </div>
+
+    <p> <b>Location :-</b>9 Gulab Singh Marg, 180001 Jammu</p>
+    <p>Inn Riviera Jammu in Jammu offers comfortable rooms with air-conditioning, private bathrooms, and city views.
+        Each room</p>
+    <p>includes a work desk, minibar, and free WiFi throughout the property.</p>
+    <p>&#8377; 16000</p>
+
+    <button class="book-now" onclick="bookHotel('Riv')">Book Now</button>
+    <script>
+        function bookHotel(hotelName) {
+            // Redirect to taj.html with the hotel name as a query parameter
+            window.location.href = `Riv.html?hotel=${hotelName}`;
+        }
+    </script>
+
+    <h2>User Ratings & Reviews</h2>
+    <div class="ratings-box" id="reviews">
+        <div class="review-box-style">
+            <strong>Akansha tripathi</strong> - ⭐⭐⭐⭐⭐
+            <p>“It was satisfying. Good variety of dishes. Beckry items were delicious..</p>
+        </div>
+        <div class="review-box-style">
+            <strong>Gudiya Paswan</strong> - ⭐⭐⭐⭐
+            <p>Nothing as such. Overall, it was a good experience.</p>
+        </div>
+        <div class="review-box-style">
+            <strong>priya Darodkar</strong> - ⭐⭐⭐⭐
+            <p>The breakfast was very good with very wide choices.The staff were very helpful and quick in responding to
+                requests.</p>
+        </div>
+        <div class="review-box-style">
+            <strong>Priti chaudhari</strong> - ⭐⭐⭐⭐
+            <p>The breakfast was very good with very wide choices.The staff were very helpful and quick in responding to
+                requests.</p>
+        </div>
+    </div>
+
+    <h3>Add Your Review</h3>
+    <div class="review-box">
+        <input type="text" id="username" placeholder="Enter your name">
+        <textarea id="review-text" placeholder="Write your review..."></textarea>
+        <select id="rating">
+            <option value="⭐">⭐</option>
+            <option value="⭐⭐">⭐⭐</option>
+            <option value="⭐⭐⭐">⭐⭐⭐</option>
+            <option value="⭐⭐⭐⭐">⭐⭐⭐⭐</option>
+            <option value="⭐⭐⭐⭐⭐">⭐⭐⭐⭐⭐</option>
+        </select>
+        <button class="submit-btn" onclick="addReview()">Submit Review</button>
+    </div>
+
+    <script>
+        function addReview() {
+            let username = document.getElementById('username').value.trim();
+            let reviewText = document.getElementById('review-text').value.trim();
+            let rating = document.getElementById('rating').value;
+            let reviewsContainer = document.getElementById('reviews');
+
+            if (username && reviewText) {
+                let reviewDiv = document.createElement('div');
+                reviewDiv.classList.add("review-box-style");
+                reviewDiv.innerHTML = `<strong>${username}</strong> - ${rating} <p>${reviewText}</p>`;
+                reviewsContainer.appendChild(reviewDiv);
+            }
+        }
+    </script>
+
+    <!-- Map Section -->
+    <div class="map">
+        <h3>Location on map</h3>
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3356.5667311740167!2d74.8587171754576!3d32.72413897368574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391e84bf178afa2b%3A0xcb86a72fb612b894!2sFortune%20Inn%20Riviera%20Jammu!5e0!3m2!1sen!2sin!4v1743413983151!5m2!1sen!2sin"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        .image-gallery {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .image-gallery img {
+            width: 200px;
+            border-radius: 10px;
+        }
+
+        .book-now {
+            background-color: #28a745;
+            color: white;
+            font-size: 18px;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 15px 0;
+        }
+
+        .review-box {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            width: 50%;
+            margin: auto;
+            text-align: center;
+        }
+
+        textarea,
+        input {
+            width: 90%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        select {
+            width: 50%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .submit-btn {
+            background: linear-gradient(45deg, #ff416c, #ff4b2b);
+            color: white;
+            font-size: 16px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+
+</body>
+
+</html>

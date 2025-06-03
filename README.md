@@ -1,2 +1,1 @@
-# Wanderlust-Hotel
-wanderlust Hotel 
+# staybnb

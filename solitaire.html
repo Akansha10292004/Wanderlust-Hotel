@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>solitaire - Details</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .image-gallery {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .image-gallery img {
+            width: 250px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .image-gallery img:hover {
+            transform: scale(1.1);
+        }
+
+        .book-now {
+            background-color: #28a745;
+            color: white;
+            font-size: 18px;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 15px 0;
+            transition: background 0.3s ease;
+        }
+
+        .book-now:hover {
+            background-color: #218838;
+        }
+
+        .ratings-box {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            width: 60%;
+            margin: auto;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .review-box-style {
+            background: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .review-box-style:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .review-box {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            width: 50%;
+            margin: auto;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .review-box:hover {
+            transform: scale(1.02);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        textarea,
+        input {
+            width: 90%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        select {
+            width: 50%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .submit-btn {
+            background: linear-gradient(45deg, #ff416c, #ff4b2b);
+            color: white;
+            font-size: 16px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background: linear-gradient(45deg, #ff4b2b, #ff416c);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Solitaire</h1>
+
+    <div class="image-gallery">
+        <img src="https://image.wedmegood.com/resized/720X/uploads/member/525015/1724480180__R9A9632.JPG"
+            alt="Hotel Image 1">
+        <img src="https://content3.jdmagicbox.com/comp/nagpur/b2/0712px712.x712.180606021958.a2b2/catalogue/solitaire-banquets-and-hotel-nagpur-hotels-1ihOawmZg6.jpg"
+            alt="Hotel Image 2">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToLxYjvjRW3bZES-X0BleGVfNZ8e15oAc2dsU90XcrbwbBICyGZf3iC4vbQ2nJ0oaoPwI&usqp=CAU"
+            alt="Hotel Image 3">
+        <img src="https://r1imghtlak.mmtcdn.com/178d1bd2ed5611ebac620a58a9feac02.jpg" alt="Hotel Image 4">
+    </div>
+
+    <p>Location: Wadi, Nagpur</p>
+    <p>Solitaire Hotel & Banquets in Nagpur is a popular choice for travelers, known for its modern interior, convenient
+        location,
+    <p>and amenities like free breakfast, Wi-Fi, and parking, making it suitable for both business and
+        leisure stays.</p>
+    <p>&#8377; 2000</p>
+
+    <button class="book-now" onclick="bookHotel('soli')">Book Now</button>
+    <script>
+        function bookHotel(hotelName) {
+            // Redirect to taj.html with the hotel name as a query parameter
+            window.location.href = `soli.html?hotel=${hotelName}`;
+        }
+    </script>
+
+    <h2>User Ratings & Reviews</h2>
+    <div class="ratings-box" id="reviews">
+        <div class="review-box-style">
+            <strong>Akansha tripathi</strong> - ⭐⭐⭐⭐⭐
+            <p>Good food quality and delicious menu appreciated by some customers</p>
+        </div>
+        <div class="review-box-style">
+            <strong>Gudiya Paswan</strong> - ⭐⭐⭐⭐
+            <p>Clean and comfortable rooms with a warm welcome from reception staff mentioned in one review.</p>
+        </div>
+    </div>
+
+    <h3>Add Your Review</h3>
+    <div class="review-box">
+        <input type="text" id="username" placeholder="Enter your name">
+        <textarea id="review-text" placeholder="Write your review..."></textarea>
+        <select id="rating">
+            <option value="⭐">⭐</option>
+            <option value="⭐⭐">⭐⭐</option>
+            <option value="⭐⭐⭐">⭐⭐⭐</option>
+            <option value="⭐⭐⭐⭐">⭐⭐⭐⭐</option>
+            <option value="⭐⭐⭐⭐⭐">⭐⭐⭐⭐⭐</option>
+        </select>
+        <button class="submit-btn" onclick="addReview()">Submit Review</button>
+    </div>
+
+    <script>
+        function addReview() {
+            let username = document.getElementById('username').value.trim();
+            let reviewText = document.getElementById('review-text').value.trim();
+            let rating = document.getElementById('rating').value;
+            let reviewsContainer = document.getElementById('reviews');
+
+            if (username && reviewText) {
+                let reviewDiv = document.createElement('div');
+                reviewDiv.classList.add("review-box-style");
+                reviewDiv.innerHTML = `<strong>${username}</strong> - ${rating} <p>${reviewText}</p>`;
+                reviewsContainer.appendChild(reviewDiv);
+            }
+        }
+    </script>
+
+    <!-- Map Section -->
+    <div class="map">
+        <h3>Location on map</h3>
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d3721.0521445277213!2d79.00088677503499!3d21.15032303052956!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1ssolitaire%20hotel%20wadi%20nagpur!5e0!3m2!1sen!2sin!4v1743142816695!5m2!1sen!2sin"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        .image-gallery {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .image-gallery img {
+            width: 200px;
+            border-radius: 10px;
+        }
+
+        .book-now {
+            background-color: #28a745;
+            color: white;
+            font-size: 18px;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 15px 0;
+        }
+
+        .review-box {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            width: 50%;
+            margin: auto;
+            text-align: center;
+        }
+
+        textarea,
+        input {
+            width: 90%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        select {
+            width: 50%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .submit-btn {
+            background: linear-gradient(45deg, #ff416c, #ff4b2b);
+            color: white;
+            font-size: 16px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+
+</body>
+
+</html>

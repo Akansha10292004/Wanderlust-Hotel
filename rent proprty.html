@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Create a New Listing</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #fff;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        input[type="text"],
+        input[type="file"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 8px;
+            margin-bottom: 16px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        .form-section {
+            margin-bottom: 20px;
+        }
+
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 8px;
+        }
+
+        .categories label {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        button {
+            background-color: #f56565;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        footer {
+            background: #eee;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        .socials a {
+            margin: 0 8px;
+            text-decoration: none;
+            color: #555;
+        }
+
+        .search-bar {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .search-bar input {
+            width: 50%;
+            padding: 10px;
+            border-radius: 25px;
+            border: 1px solid #ccc;
+        }
+
+        .search-bar button {
+            margin-left: 8px;
+            background-color: #f56565;
+            border: none;
+            color: white;
+            padding: 10px 16px;
+            border-radius: 25px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="search-bar">
+            <input type="text" placeholder="Search Location | Title | Price">
+            <button>Search</button>
+        </div>
+
+        <h2>Create a New Listing</h2>
+
+        <form action="#" method="POST" enctype="multipart/form-data">
+            <div class="form-section">
+                <label>Title</label>
+                <input type="text" name="title" placeholder="Enter a Catchy Title">
+            </div>
+
+            <div class="form-section">
+                <label>Description</label>
+                <textarea name="description" rows="5" placeholder="Enter description"></textarea>
+            </div>
+
+            <div class="form-section">
+                <label>Upload Listing Image</label>
+                <input type="file" name="listing_image">
+            </div>
+
+            <div class="form-section">
+                <label>Choose Category</label>
+                <div class="categories">
+                    <label><input type="radio" name="category" value="Rooms"> 🛏️ Rooms</label>
+                    <label><input type="radio" name="category" value="Iconic Cities"> 🗺️ Iconic Cities</label>
+                    <label><input type="radio" name="category" value="Mountains"> ⛰️ Mountains</label>
+                    <label><input type="radio" name="category" value="Castles"> 🏰 Castles</label>
+                    <label><input type="radio" name="category" value="Boat"> ⛵ Boat</label>
+                    <label><input type="radio" name="category" value="Ski-in/out"> 🎿 Ski-in/out</label>
+                    <label><input type="radio" name="category" value="Apartment"> 🏢 Apartment</label>
+                    <label><input type="radio" name="category" value="New"> 🗝️ New</label>
+                    <label><input type="radio" name="category" value="Woodlands"> 🌳 Woodlands</label>
+                    <label><input type="radio" name="category" value="Lake"> 🌊 Lake</label>
+                    <label><input type="radio" name="category" value="Amazing Pools"> 🏊 Amazing Pools</label>
+                    <label><input type="radio" name="category" value="Cabins"> 🏠 Cabins</label>
+                    <label><input type="radio" name="category" value="Camping"> ⛺ Camping</label>
+                    <label><input type="radio" name="category" value="Farm"> 🚜 Farm</label>
+                    <label><input type="radio" name="category" value="Arctic"> ❄️ Arctic</label>
+                    <label><input type="radio" name="category" value="Beach"> 🏖️ Beach</label>
+                    <label><input type="radio" name="category" value="Countryside"> 🌾 Countryside</label>
+                    <label><input type="radio" name="category" value="Bed & Breakfasts"> ☕ Bed & Breakfasts</label>
+                    <label><input type="radio" name="category" value="Campsite"> 🏕️ Campsite</label>
+                    <label><input type="radio" name="category" value="Historical Homes"> 🏛️ Historical Homes</label>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <label>Price</label>
+                <input type="text" name="price" placeholder="Enter price">
+            </div>
+
+            <div class="form-section">
+                <label>Location</label>
+                <input type="text" name="location" placeholder="Enter location">
+            </div>
+
+            <div class="form-section">
+                <label>Country</label>
+                <input type="text" name="country" placeholder="Enter country">
+            </div>
+
+            <a href="index.html">
+                <button type="button">Add</button>
+            </a>
+
+        </form>
+
+        <footer>
+            <div class="socials">
+                <a href="#">Facebook</a>
+                <a href="#">Instagram</a>
+                <a href="#">Twitter</a>
+                <a href="#">Pinterest</a>
+                <a href="#">LinkedIn</a>
+            </div>
+            <p>© WanderLust Private Limited</p>
+            <p><a href="#">Privacy</a> <a href="#">Terms</a> <a href="#">Sitemap</a> <a href="#">Company details</a></p>
+        </footer>
+    </div>
+
+</body>
+
+</html>

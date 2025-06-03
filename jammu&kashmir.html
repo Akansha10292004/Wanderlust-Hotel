@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jammu&Kashmir-Hotels</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h1>Jammu&Kashmir Hotels</h1>
+    <div class="hotel-list">
+        <div class="hotel">
+            <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/636980452.jpg?k=fce7054b145d1c089b8a2220006c51f8d57768937cb5ab55f3c4dca34efffe8e&o=&hp=1"
+                alt="The Walnut Creek Hotel">
+            <h2>The Walnut Creek Hotel</h2>
+            <p>Location:Dewathoo, Pahalgam, Jammu and Kashmir</p>
+
+            <button class="book-now">
+                <a href="walnut.html">Book Now</a>
+            </button>
+
+        </div>
+        <div class="hotel">
+            <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/595963824.jpg?k=529e7ee75269fa551cd1d7c802672b524b02b856ea97867b46223917612d047a&o=&hp=1"
+                alt="Inn Riviera Jammu">
+            <h2>Inn Riviera Jammu</h2>
+            <p>Location: 9 Gulab Singh Marg, 180001 Jammu,</p>
+            <button class="book-now">
+                <a href="Riviera.html">Book Now</a>
+            </button>
+        </div>
+        <div class="hotel">
+            <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/473929994.jpg?k=5d32362c7dde756d6bbc43578f3c7ed8bfb2d3c8766676ee1f38ec1068b90efe&o="
+                alt="Vivanta Jammu City Centre">
+            <h2>Vivanta Jammu City Centre</h2>
+            <p>Location: Maharaja Gulab Singh Marg, 180001 Jammu</p>
+            <button class="book-now">
+                <a href="vivanta.html">Book Now</a>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        function bookHotel(hotelName) {
+            window.location.href = `booking.html?hotel=${hotelName}`;
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        .hotel-list {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .hotel {
+            border: 1px solid #ccc;
+            padding: 10px;
+            width: 300px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .hotel img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .book-now {
+            background-color: #28a745;
+            color: white;
+            font-size: 16px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .book-now:hover {
+            background-color: #218838;
+        }
+    </style>
+</body>
+
+</html>

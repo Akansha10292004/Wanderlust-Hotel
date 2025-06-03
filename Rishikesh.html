@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Rishikesh Hotel Booking</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h1> Rishikesh Hotel Booking</h1>
+    <div class="hotel-list">
+        <div class="hotel">
+            <img src="https://r1imghtlak.mmtcdn.com/5c6f3cca-0b34-41ab-872b-34c907f518e8.jpeg"
+                alt="La Estoria, Goa - IHCL SeleQtions">
+            <h2>namaste rishikesh camp</h2>
+            <p>Location: T.g, Badrinath Road, Rishikesh HO,Rishikesh</p>
+
+            <button class="book-now">
+                <a href="namaste rishikesh.html">Book Now</a>
+            </button>
+
+        </div>
+        <div class="hotel">
+            <img src="https://content3.jdmagicbox.com/comp/haridwar/l6/9999p1334.1334.110428180444.m5l6/catalogue/brinjal-hotels-haridwar-haridwar-h-o-haridwar-hotels-eo3p4.jpg"
+                alt="ArtBuzz Hotel">
+            <h2>Brinjal Hotel</h2>
+            <p>Location: Road near the Jain Temple</p>
+            <button class="book-now">
+                <a href="brinjal hotel.html">Book Now</a>
+            </button>
+        </div>
+        <div class="hotel">
+            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2c/f8/7e/7f/caption.jpg?w=800&h=500&s=1"
+                alt="Ramada by Wyndham Mussorie">
+            <h2>Hotel Aqua Vibes</h2>
+            <p>Location:NH58, Badrinath Highway Opp Deccan Valley Apts, Rishikesh</p>
+            <button class="book-now">
+                <a href="Aqua hotel.html">Book Now</a>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        function bookHotel(hotelName) {
+            window.location.href = `booking.html?hotel=${hotelName}`;
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        .hotel-list {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .hotel {
+            border: 1px solid #ccc;
+            padding: 10px;
+            width: 300px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .hotel img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .book-now {
+            background-color: #28a745;
+            color: white;
+            font-size: 16px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .book-now:hover {
+            background-color: #218838;
+        }
+    </style>
+</body>
+
+</html>

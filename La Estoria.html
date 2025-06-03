@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> La Estoria, Goa - IHCL SeleQtions- Details</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .image-gallery {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .image-gallery img {
+            width: 250px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .image-gallery img:hover {
+            transform: scale(1.1);
+        }
+
+        .book-now {
+            background-color: #28a745;
+            color: white;
+            font-size: 18px;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 15px 0;
+            transition: background 0.3s ease;
+        }
+
+        .book-now:hover {
+            background-color: #218838;
+        }
+
+        .ratings-box {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            width: 60%;
+            margin: auto;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .review-box-style {
+            background: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .review-box-style:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .review-box {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            width: 50%;
+            margin: auto;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .review-box:hover {
+            transform: scale(1.02);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        textarea,
+        input {
+            width: 90%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        select {
+            width: 50%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .submit-btn {
+            background: linear-gradient(45deg, #ff416c, #ff4b2b);
+            color: white;
+            font-size: 16px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background: linear-gradient(45deg, #ff4b2b, #ff416c);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>La Estoria, Goa - IHCL SeleQtions</h1>
+
+    <div class="image-gallery">
+        <img src="https://www.seleqtionshotels.com/content/dam/seleqtions/en/in/our-hotels/la-estoria-goa-ihcl-seleqtions/overview-gallery/courtyard-night-time.jpg"
+            alt="Hotel Image 1">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRundomg4Midl7Lp5aV2y-TzelJMuFGRCya8Q&s"
+            alt="Hotel Image 2">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPP0d1rTxAuvIQJkY-CT2mf6zjxBIyN4FzCQ&s"
+            alt="Hotel Image 3">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcSxTkUG1BKkhC8dwk1ilCRL7BYV5jPQyIDw&s"
+            alt="Hotel Image 4">
+    </div>
+
+    <p><b>Location:- </b>Bammon Vaddo, Candolim, Goa</p>
+    <p>La Estoria, Goa - IHCL SeleQtions, a 122-room resort in Candolim, Goa, offers a blend of Goan-Portuguese
+        architecture</p>
+    <p>and modern elegance, with a prime location near Candolim Beach and the bustling Candolim Market,.</p>
+    <p>&#8377; 4000</p>
+
+    <button class="book-now" onclick="bookHotel('la')">Book Now</button>
+    <script>
+        function bookHotel(hotelName) {
+            // Redirect to taj.html with the hotel name as a query parameter
+            window.location.href = `la.html?hotel=${hotelName}`;
+        }
+    </script>
+
+    <h2>User Ratings & Reviews</h2>
+    <div class="ratings-box" id="reviews">
+        <div class="review-box-style">
+            <strong>Akansha Tripathi</strong> - ⭐⭐⭐⭐⭐
+            <p>Luxury and Opulence:
+                The hotel is praised for its grand architecture, beautiful rooms, and lavish decor, creating a truly
+                luxurious
+                atmosphere</p>
+        </div>
+        <div class="review-box-style">
+            <strong>priti chaudhari</strong> - ⭐⭐⭐⭐
+            <p>Exceptional Service:
+                Guests consistently highlight the attentiveness and graciousness of the staff, who go above and beyond
+                to ensure a
+                comfortable and enjoyable stay..</p>
+        </div>
+    </div>
+
+    <h3>Add Your Review</h3>
+    <div class="review-box">
+        <input type="text" id="username" placeholder="Enter your name">
+        <textarea id="review-text" placeholder="Write your review..."></textarea>
+        <select id="rating">
+            <option value="⭐">⭐</option>
+            <option value="⭐⭐">⭐⭐</option>
+            <option value="⭐⭐⭐">⭐⭐⭐</option>
+            <option value="⭐⭐⭐⭐">⭐⭐⭐⭐</option>
+            <option value="⭐⭐⭐⭐⭐">⭐⭐⭐⭐⭐</option>
+        </select>
+        <button class="submit-btn" onclick="addReview()">Submit Review</button>
+    </div>
+
+    <script>
+        function addReview() {
+            let username = document.getElementById('username').value.trim();
+            let reviewText = document.getElementById('review-text').value.trim();
+            let rating = document.getElementById('rating').value;
+            let reviewsContainer = document.getElementById('reviews');
+
+            if (username && reviewText) {
+                let reviewDiv = document.createElement('div');
+                reviewDiv.classList.add("review-box-style");
+                reviewDiv.innerHTML = `<strong>${username}</strong> - ${rating} <p>${reviewText}</p>`;
+                reviewsContainer.appendChild(reviewDiv);
+            }
+        }
+    </script>
+
+    <!-- Map Section -->
+    <div class="map">
+        <h3>Location on map</h3>
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3844.5131311061623!2d73.76923407489186!3d15.510598985090835!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbfc1a2987c341b%3A0xc0aeef08b7834503!2sLa%20Estoria%2C%20Goa%20-%20IHCL%20SeleQtions!5e0!3m2!1sen!2sin!4v1743961692961!5m2!1sen!2sin"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        .image-gallery {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .image-gallery img {
+            width: 200px;
+            border-radius: 10px;
+        }
+
+        .book-now {
+            background-color: #28a745;
+            color: white;
+            font-size: 18px;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 15px 0;
+        }
+
+        .review-box {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            width: 50%;
+            margin: auto;
+            text-align: center;
+        }
+
+        textarea,
+        input {
+            width: 90%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        select {
+            width: 50%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .submit-btn {
+            background: linear-gradient(45deg, #ff416c, #ff4b2b);
+            color: white;
+            font-size: 16px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+
+</body>
+
+</html>

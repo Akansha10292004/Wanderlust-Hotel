@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Booking & Payment</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 30px;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            background: white;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .container:hover {
+            transform: scale(1.02);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        input,
+        select,
+        button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            transition: all 0.3s;
+        }
+
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #0056b3;
+            transform: scale(1.05);
+        }
+
+        .payment-method {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            padding: 10px;
+        }
+
+        .payment-method img {
+            width: 60px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .payment-method img:hover {
+            transform: scale(1.1);
+        }
+
+        .error {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" id="bookingContainer">
+        <h2>Solitaire Hotel</h2>
+        <input type="text" id="name" placeholder="Your Name">
+        <input type="email" id="email" placeholder="Your Email">
+        <select id="roomType">
+            <option value="">Select Room Type</option>
+            <option value="Single">Single Room</option>
+            <option value="Double">Double Room</option>
+            <option value="Suite">Suite</option>
+        </select>
+        <input type="number" id="adults" placeholder="Number of Adults">
+        <input type="number" id="children" placeholder="Number of Children">
+        <label>Check-in Date:</label>
+        <input type="date" id="checkIn">
+        <label>Check-out Date:</label>
+        <input type="date" id="checkOut">
+        <p id="dateError" class="error"></p>
+        <button onclick="confirmBooking()">Confirm Booking</button>
+    </div>
+
+    <div class="container" id="paymentContainer" style="display: none;">
+        <h2>Complete Your Payment</h2>
+        <div class="payment-method">
+            <img src="https://raw.githubusercontent.com/hdpngworld/HPW/main/uploads/6509eac5314fe-logo.png"
+                alt="PhonePe" onclick="showPaymentOption('PhonePe')">
+            <img src="https://cdn-icons-png.flaticon.com/512/6124/6124998.png" alt="Google Pay"
+                onclick="showPaymentOption('Google Pay')">
+            <img src="https://cdn.iconscout.com/icon/free/png-256/free-netbanking-icon-download-in-svg-png-gif-file-formats--credit-debit-card-bank-payment-methods-vol-2-pack-business-icons-32304.png"
+                alt="Net Banking" onclick="showPaymentOption('Net Banking')">
+        </div>
+        <div id="paymentDetails" style="display: none;">
+            <h3 id="paymentTitle"></h3>
+            <div id="paymentForm"></div>
+            <button onclick="processPayment()">Pay Now (₹2000)</button>
+            <p id="paymentError" class="error"></p>
+        </div>
+    </div>
+
+    <div class="container" id="thankYouContainer" style="display: none;">
+        <h2>Thank You!</h2>
+        <p>Your booking is confirmed.</p>
+        <p id="userDetails"></p>
+        <p id="paymentNotification" style="color: green; font-weight: bold;"></p>
+        <button onclick="goindex()">Back to Home</button>
+    </div>
+
+    <script>
+        function confirmBooking() {
+            let name = document.getElementById('name').value;
+            let email = document.getElementById('email').value;
+            let roomType = document.getElementById('roomType').value;
+            let checkIn = document.getElementById('checkIn').value;
+            let checkOut = document.getElementById('checkOut').value;
+            let today = new Date().toISOString().split("T")[0];
+
+            if (!name || !email || !roomType || !checkIn || !checkOut) {
+                alert("Please fill all required fields.");
+                return;
+            }
+
+            if (checkIn < today || checkOut < checkIn) {
+                document.getElementById('dateError').innerText = "Please select a valid check-in and check-out date.";
+                return;
+            }
+
+            document.getElementById('dateError').innerText = "";
+            document.getElementById('bookingContainer').style.display = 'none';
+            document.getElementById('paymentContainer').style.display = 'block';
+        }
+
+        function showPaymentOption(method) {
+            document.getElementById('paymentTitle').innerText = `Pay with ${method}`;
+            document.getElementById('paymentDetails').style.display = 'block';
+            let paymentForm = document.getElementById('paymentForm');
+            document.getElementById('paymentError').innerText = "";
+
+            if (method === 'Net Banking') {
+                paymentForm.innerHTML = `
+                    <label>Name on Card</label>
+                    <input type="text" id="cardName" placeholder="Enter Name">
+                    <label>Card Number</label>
+                    <input type="text" id="cardNumber" placeholder="Enter Card Number">
+                    <label>Expiry Date</label>
+                    <input type="text" id="expiryDate" placeholder="MM/YY">
+                    <label>CVV</label>
+                    <input type="password" id="cvv" placeholder="CVV">
+                `;
+            } else {
+                paymentForm.innerHTML = '<label>Enter Payment Details</label><input type="text" id="paymentInput" placeholder="Enter UPI ID / Bank Details">';
+            }
+        }
+
+        function processPayment() {
+            let paymentInput = document.getElementById('paymentInput') ? document.getElementById('paymentInput').value : "";
+            let cardName = document.getElementById('cardName') ? document.getElementById('cardName').value : "";
+            let cardNumber = document.getElementById('cardNumber') ? document.getElementById('cardNumber').value : "";
+            let expiryDate = document.getElementById('expiryDate') ? document.getElementById('expiryDate').value : "";
+            let cvv = document.getElementById('cvv') ? document.getElementById('cvv').value : "";
+
+            if (!paymentInput && (!cardName || !cardNumber || !expiryDate || !cvv)) {
+                document.getElementById('paymentError').innerText = "Please enter the required payment details.";
+                return;
+            }
+
+            alert('Payment Successful!');
+            document.getElementById('paymentContainer').style.display = 'none';
+            document.getElementById('thankYouContainer').style.display = 'block';
+            document.getElementById('paymentNotification').innerText = 'Payment Successfully Completed!';
+        }
+
+        function goindex() {
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+
+</html>

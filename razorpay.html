@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment - Razorpay Clone</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 30px;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        input,
+        select,
+        button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        .payment-method {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .payment-method img {
+            width: 50px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Complete Your Payment</h2>
+        <div class="payment-method">
+            <img src="https://raw.githubusercontent.com/hdpngworld/HPW/main/uploads/6509eac5314fe-logo.png"
+                alt="Phone Pay" onclick="showPaymentOption('PhonePe')">
+            <img src="https://cdn-icons-png.flaticon.com/512/6124/6124998.png" alt="Google Pay"
+                onclick="showPaymentOption('Google Pay')">
+            <img src="https://cdn.iconscout.com/icon/free/png-256/free-netbanking-icon-download-in-svg-png-gif-file-formats--credit-debit-card-bank-payment-methods-vol-2-pack-business-icons-32304.png"
+                alt="Net Banking" onclick="showPaymentOption('Net Banking')">
+        </div>
+
+        <div id="paymentDetails" style="display: none;">
+            <h3 id="paymentTitle"></h3>
+            <div id="paymentForm">
+                <label>Enter Payment Details</label>
+                <input type="text" id="paymentInput" placeholder="Enter UPI ID / Bank Details">
+            </div>
+            <button onclick="processPayment()">Pay Now (₹5500)</button>
+        </div>
+    </div>
+
+    <script>
+        function showPaymentOption(method) {
+            document.getElementById('paymentTitle').innerText = `Pay with ${method}`;
+            document.getElementById('paymentDetails').style.display = 'block';
+            let paymentForm = document.getElementById('paymentForm');
+
+            if (method === 'Net Banking') {
+                paymentForm.innerHTML = `
+                    <label>Name on Card</label>
+                    <input type="text" placeholder="Enter Name">
+                    <label>Card Number</label>
+                    <input type="text" placeholder="Enter Card Number">
+                    <label>Expiry Date</label>
+                    <input type="text" placeholder="MM/YY">
+                    <label>CVV</label>
+                    <input type="password" placeholder="CVV">
+                `;
+            } else {
+                paymentForm.innerHTML = '<label>Enter Payment Details</label><input type="text" id="paymentInput" placeholder="Enter UPI ID / Bank Details">';
+            }
+        }
+
+        function processPayment() {
+            alert('Payment of ₹5500 Successful!');
+            window.location.href = 'thankyou.html';
+        }
+    </script>
+</body>
+
+</html>
